@@ -17,3 +17,8 @@ BitCoin is a Node.js web app that lets users manage Bitbars, a new ultra-safe cr
 
 ## Defenses
 Updated web app to defned attacks based on Input Sanitation, Secret Token Validation, Signature and CSP policies
+
+## Usage
+* Install (and run) Docker Community Edition on your local machine1 https://store.docker.com/search?type=edition&offering=community
+* Navigate to the starter code root directory and run bash build_image.sh
+* To start the server, run bash start_server.sh. 
