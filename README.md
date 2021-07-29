@@ -5,7 +5,6 @@ In this project,first find the vulnerabilities of a web app called BitCoin throu
 BitCoin is a Node.js web app that lets users manage Bitbars, a new ultra-safe cryptocurrency. It is built using Express.js, SQLite database and ESJ. 
 <img width="1428" alt="security" src="https://user-images.githubusercontent.com/55666152/126855391-e0488c87-795b-4b46-9e34-8aad3b453ee6.png">
 
-
 ## Attacks 
 * Cookie theft: steals the logged in user’s Bitbar session cookie and send it to an attacker controlled URL
 * Cross-Site Request Forgery: constructs a Cross Site Request Forgery (CSRF) attack that steals Bitbar from another user.
